@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.core;
 
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;
 
 /** FixedExecutorProvider is an ExecutorProvider which always returns the same executor. */
@@ -43,6 +44,11 @@ public final class FixedExecutorProvider implements ExecutorProvider {
   @Override
   public ScheduledExecutorService getExecutor() {
     return executor;
+  }
+
+  @Override
+  public ExecutorService getVTExecutor() {
+    return null;
   }
 
   @Override
